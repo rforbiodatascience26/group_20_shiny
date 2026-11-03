@@ -9,7 +9,7 @@ ui <- page_fluid(
     col_widths = 12,
     card(
       titlePanel("About"),
-      helpText("Describe what your app does...")
+      helpText("This interactive application simulates the central dogma of molecular biology, allowing you to generate custom DNA sequences, analyze nucleotide compositions, and trace them through transcription to mRNA and translation to protein.")
     )),
   layout_columns(
     col_widths = 12,
@@ -55,19 +55,6 @@ ui <- page_fluid(
       mainPanel(
         verbatimTextOutput(outputId = "dna")
       )
-    )
-  ),
-  layout_columns(
-    col_widths = 12,
-    card(
-      card_header("RNA Translation"),
-      mainPanel(
-          verbatimTextOutput(
-              outputId = "protein"
-      )
-    )
-  )
-))
     )),
   layout_columns(
     col_widths = 12,
@@ -83,6 +70,14 @@ ui <- page_fluid(
       card_header("Virtual RNA output"),
       mainPanel(
         verbatimTextOutput(outputId = "rna")
+      )
+    )),
+  layout_columns(
+    col_widths = 12,
+    card(
+      card_header("RNA Translation"),
+      mainPanel(
+        verbatimTextOutput(outputId = "protein")
       )
     ))
 )
