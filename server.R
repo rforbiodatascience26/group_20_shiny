@@ -1,3 +1,6 @@
+library("shiny")
+library("bslib")
+
 server <- function(input, output) {
   dna_seq <- reactive({
     gene_dna(length = input$n_bases,
