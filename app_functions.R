@@ -67,10 +67,16 @@ transcribe_dna <- function(dna){
 # Simple base counts
 base_freqs <- function(dna){
   if (is.null(dna) || dna == "" ){
-    return( data.frame(Base = factor(c("A", "C", "G", "T")),
-                       Freq = c(0, 0, 0, 0)) ) }
-  Base <- strsplit(x = dna,
-                      split = "")
-  base_counts <- table(Base)
-  return( as.data.frame.table(base_counts) )
+    return( data.frame(dna_vec = factor(c("A", "C", "G", "T")),
+                       Freq = c(0, 0, 0, 0)) ) 
+  }
+  
+  dna_vec <- strsplit(x = dna, split = "")[[1]]
+  
+  base_counts <- table(dna_vec)
+  df <- as.data.frame.table(base_counts)
+  
+  colnames(df) <- c("Base", "Freq")
+  
+  return(df)
 }
