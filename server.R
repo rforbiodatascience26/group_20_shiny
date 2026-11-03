@@ -8,6 +8,10 @@ server <- function(input, output) {
     dna_seq()
   })
   
+  output$basecounts <- renderTable({
+    base_freqs(dna = dna_seq())
+  })
+  
   output$rna <- renderText({
     transcribe_dna(dna_seq())
   })
