@@ -65,4 +65,10 @@ ui <- page_fluid(
       )
     )
   )
+      card_header("Virtual RNA output"),
+      mainPanel(
+        verbatimTextOutput(outputId = "rna")
+      )
+    ))
+  
 )
