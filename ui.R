@@ -68,3 +68,21 @@ ui <- page_fluid(
     )
   )
 ))
+    )),
+  layout_columns(
+    col_widths = 12,
+    card(
+      card_header("Base Counts"),
+      mainPanel(
+        tableOutput(outputId = "basecounts") 
+      )
+    )),
+  layout_columns(
+    col_widths = 12,
+    card(
+      card_header("Virtual RNA output"),
+      mainPanel(
+        verbatimTextOutput(outputId = "rna")
+      )
+    ))
+)

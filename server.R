@@ -17,6 +17,13 @@ server <- function(input, output) {
   
   output$protein <- renderText({
     translate_rna(rna_seq())
+  
+  output$basecounts <- renderTable({
+    base_freqs(dna = dna_seq())
+  })
+  
+  output$rna <- renderText({
+    transcribe_dna(dna_seq())
   })
   
 }
