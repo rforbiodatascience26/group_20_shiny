@@ -55,6 +55,19 @@ ui <- page_fluid(
       mainPanel(
         verbatimTextOutput(outputId = "dna")
       )
+    )
+  ),
+  layout_columns(
+    col_widths = 12,
+    card(
+      card_header("RNA Translation"),
+      mainPanel(
+          verbatimTextOutput(
+              outputId = "protein"
+      )
+    )
+  )
+))
     )),
   layout_columns(
     col_widths = 12,
